@@ -35,6 +35,7 @@ php artisan vendor:publish --tag="quotesbb-views"
 <livewire:flash-quotes />
 ```
 
+## Livewire V2: [https://github.com/BataBoom/Livewire-FlashQuotes](https://github.com/BataBoom/Livewire-FlashQuotes)
 
 ## Changelog
 
