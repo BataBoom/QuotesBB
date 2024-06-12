@@ -41,6 +41,8 @@ class QuotesBBServiceProvider extends PackageServiceProvider
             __DIR__.'/../resources/quotes' => public_path('bataboom/quotesbb'),
         ], 'public');
 
+        $this->loadViewsFrom(__DIR__.'/../resources/views/livewire/quotesbb', 'quotesbb');
+
     }
 
 }
