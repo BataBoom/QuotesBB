@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Config;
 class FlashQuotes extends Component
 {
     public $Quotes;
-    public string $source;
-    public string $inspire;
+    public array $source;
+    public array $inspire;
     public string $NewQuote = '';
     public string $NewSource = '';
     public int $randomNumber;
