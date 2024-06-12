@@ -19,31 +19,30 @@ class QuotesBBServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('quotesbb')
-            ->hasConfigFile()
+            ->hasConfigFile('quotesbb')
             ->hasViews()
             ->hasCommand(QuotesBBCommand::class)
-            ->hasInstallCommand(function(InstallCommand $command) {
+            ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishConfigFile()
                     ->publishAssets()
                     ->copyAndRegisterServiceProviderInApp()
                     ->askToStarRepoOnGitHub('https://github.com/BataBoom/QuotesBB');
             });
-
     }
 
-    public function boot()
+    public function packageBooted()
     {
-
+        // Register the Livewire component
         Livewire::component('flash-quotes', \BataBoom\QuotesBB\Livewire\FlashQuotes::class);
 
+        // Publish the quotes resources
         $this->publishes([
             __DIR__.'/../resources/quotes' => public_path('bataboom/quotesbb'),
         ], 'public');
 
+        // Load views from the specified path and namespace
         $this->loadViewsFrom(__DIR__.'/../resources/views/livewire/quotesbb', 'quotesbb');
-
-
     }
 
 }
