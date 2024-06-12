@@ -35,13 +35,14 @@ class QuotesBBServiceProvider extends PackageServiceProvider
     public function boot()
     {
 
-        Livewire::component('quotesbb', \BataBoom\QuotesBB\Livewire\FlashQuotes::class);
+        Livewire::component('flash-quotes', \BataBoom\QuotesBB\Livewire\FlashQuotes::class);
 
         $this->publishes([
             __DIR__.'/../resources/quotes' => public_path('bataboom/quotesbb'),
         ], 'public');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views/livewire/quotesbb', 'quotesbb');
+
 
     }
 

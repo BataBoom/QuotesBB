@@ -48,7 +48,7 @@ class FlashQuotes extends Component
     public function render()
     {
 
-        return view('quotesbb::livewire.quotesbb.quotes', [
+        return view('quotesbb::quotes', [
             'quotes' => $this->NewQuote,
             'sources' => $this->NewSource,
         ]);
