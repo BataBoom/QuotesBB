@@ -1,3 +1,5 @@
+![me](https://i.imgur.com/KkglGNg.gif)
+
 ## Installation
 
 You can install the package via composer:
