@@ -18,7 +18,8 @@
     "require": {
         "php": "^8.2",
         "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^10.0||^11.0"
+        "illuminate/contracts": "^10.0||^11.0",
+        "livewire/livewire": "^3.4"
     },
     "require-dev": {
         "laravel/pint": "^1.14",
@@ -30,8 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "BataBoom\\QuotesBB\\": "src/",
-            "BataBoom\\QuotesBB\\Database\\Factories\\": "database/factories/"
+            "BataBoom\\QuotesBB\\": "src/"
         }
     },
     "autoload-dev": {
