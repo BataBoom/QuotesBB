@@ -6,20 +6,8 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Config;
 
-
 class QuotesResource extends JsonResource
 {
-    public $quotes;
-
-    public function __construct()
-    {
-
-        $file = Config::get('quotesbb.all');
-        $this->quotes = Storage::get($file);
-
-
-    }
-
     /**
      * Transform the resource into an array.
      *
@@ -33,9 +21,6 @@ class QuotesResource extends JsonResource
 
     public static function Inspire()
     {
-        $file = Config::get('quotesbb.all');
-        $file = Storage::get($file);
-
-        return json_decode($file, true);
+        return json_decode(file_get_contents(Config::get('quotesbb.all')), true);
     }
 }
