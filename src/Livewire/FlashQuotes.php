@@ -4,19 +4,22 @@ namespace BataBoom\QuotesBB\Livewire;
 
 use Livewire\Component;
 use BataBoom\QuotesBB\Http\Resources\QuotesResource;
+use Illuminate\Support\Facades\Config;
 
 class FlashQuotes extends Component
 {
     public $Quotes;
-    public $source;
-    public $inspire;
-    public $NewQuote = '';
-    public $NewSource = '';
-    public $randomNumber;
+    public string $source;
+    public string $inspire;
+    public string $NewQuote = '';
+    public string $NewSource = '';
+    public int $randomNumber;
+    public string $delay;
 
 
     public function mount() {
 
+        $this->delay = Config::get('quotesbb.delay');
         $this->Quotes = QuotesResource::Inspire();
         $this->inspire = array_column($this->Quotes, 'quote');
         $this->source = array_column($this->Quotes, 'source');
