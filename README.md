@@ -8,6 +8,13 @@ You can install the package via composer:
 composer require bataboom/quotesbb
 ```
 
+Publish the service provider with:
+
+```bash
+php artisan vendor:publish
+BataBoom\QuotesBB\QuotesBBServiceProvider
+```
+
 You can publish the config file with:
 
 ```bash
